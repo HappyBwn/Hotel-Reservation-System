@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Họ và tên</th>
+        <th>SĐT</th>
+        <th>Loại</th>
+        <th>Địa chỉ</th>
+        <th>CCCD</th>
+        <th>Ghi chú</th>
+        <th>Khu phòng</th>
+        <th>Số phòng</th>
+        <th>Giá phòng</th>
+        <th>Ngày đến</th>
+        <th>Ngày đi</th>	
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        ajax: '/api/data',
+        serverSide: true,
+        columns: [
+          {data: 'ten'},
+          {data: 'sdt'},
+          {data: 'loai'},
+          {data: 'diachi'},
+          {data: 'cccd'},
+          {data: 'ghichu', orderable: false},
+          {data: 'khuphong'},
+          {data: 'sophong'},
+          {data: 'giaphong'},		  
+          {data: 'ngayden'},
+          {data: 'ngaydi'}		  
+        ],
+      });
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<link href='https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css' rel='stylesheet' type='text/css'>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/1.8/css/bootstrap-switch.css' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://davidstutz.github.io/bootstrap-multiselect/css/bootstrap-multiselect.css' rel='stylesheet' type='text/css'> -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js' type='text/javascript'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js' type='text/javascript'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js' type='text/javascript'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/1.8/js/bootstrap-switch.min.js' type='text/javascript'></script>
+	<!-- <script src='https://davidstutz.github.io/bootstrap-multiselect/js/bootstrap-multiselect.js' type='text/javascript'></script> -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>  
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css" /> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <link type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+</head>
+<body>
+  <div class='container'>
+    <div class='panel panel-primary dialog-panel'>
+      <div class='panel-heading'>
+        <h2>Thông tin đặt phòng</h2>
+      </div>
+      <div class='panel-body'>
+        <form class='form-horizontal' role='form' onsubmit="addData(event)">
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='khuphong'>Khu phòng:</label>
+            <div class='col-md-2'>
+              <select class='form-control' id='khuphong' name='khuphong'>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+				<option>D</option>
+              </select>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='loai'>Loại khách:</label>
+            <div class='col-md-8'>
+              <div class='col-md-3'>
+                <div class='form-group internal'>
+                  <select class='form-control' id='loai' name='loai'>
+                    <option>Trưởng đoàn</option>
+                    <option>Gia đình</option>
+                    <option>Hành hương</option>
+                    <option>VIP</option>
+                  </select>
+                </div>
+              </div>
+              <!-- <div class='col-md-3 indent-small'> -->
+                <!-- <div class='form-group internal'> -->
+                  <!-- <input class='form-control' id='ten' placeholder='Họ và tên' type='text'> -->
+                <!-- </div> -->
+              <!-- </div> -->
+              <!-- <div class='col-md-3 indent-small'> -->
+                <!-- <div class='form-group internal'> -->
+                  <!-- <input class='form-control' id='sdt' placeholder='SĐT' type='text'> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            </div>
+          </div>
+          <!-- <div class='form-group'> -->
+            <!-- <label class='control-label col-md-2 col-md-offset-2' for='id_adults'>Guests</label> -->
+            <!-- <div class='col-md-8'> -->
+              <!-- <div class='col-md-2'> -->
+                <!-- <div class='form-group internal'> -->
+                  <!-- <input class='form-control col-md-8' id='id_adults' placeholder='18+ years' type='number'> -->
+                <!-- </div> -->
+              <!-- </div> -->
+              <!-- <div class='col-md-3 indent-small'> -->
+                <!-- <div class='form-group internal'> -->
+                  <!-- <input class='form-control' id='id_children' placeholder='2-17 years' type='number'> -->
+                <!-- </div> -->
+              <!-- </div> -->
+              <!-- <div class='col-md-3 indent-small'> -->
+                <!-- <div class='form-group internal'> -->
+                  <!-- <input class='form-control' id='id_children_free' placeholder='&lt; 2 years' type='number'> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='diachi'>Thông tin khách:</label>
+            <div class='col-md-6'>
+              <div class='form-group'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='ten' name='ten' placeholder='Họ và tên' type='text'>
+                </div>
+              </div>
+              <div class='form-group'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='sdt' name='sdt' placeholder='SĐT' type='text'>
+                </div>
+              </div>			  
+              <div class='form-group'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='diachi' name='diachi' placeholder='Địa chỉ' type='text'>
+                </div>
+              </div>
+              <div class='form-group internal'>
+                <div class='col-md-11'>
+                  <input class='form-control' id='cccd' name='cccd' placeholder='CCCD' type='text'>
+                </div>
+              </div>			  
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_checkin'>Ngày đến:</label>
+            <div class='col-md-8'>
+              <div class='col-md-3'>
+                <div class='form-group internal input-group'>
+                  <!-- <input class='form-control datepicker' id='datepicker-checkin' name='ngayden' type="text"> -->
+				  <input class='form-control datepicker' id='ngayden' name='ngayden' type="text">
+                  <span class='input-group-addon'>
+                    <i class='glyphicon glyphicon-calendar'></i>
+                  </span>
+					<script type="text/javascript">
+								$(function () {
+									$("#ngayden").datepicker({ 
+										dateFormat: 'dd-mm-yy' 
+									});
+								});
+					</script>				  
+                </div>
+              </div>
+              <label class='control-label col-md-2' for='id_checkout'>Ngày đi:</label>
+              <div class='col-md-3'>
+                <div class='form-group internal input-group'>
+                  <!-- <input class='form-control datepicker' id='datepicker-checkout' name='ngaydi' type="text"> -->
+				  <input class='form-control datepicker' id='ngaydi' 'name='ngaydi' type="text">
+                  <span class='input-group-addon'>
+                    <i class='glyphicon glyphicon-calendar'></i>
+                  </span>
+					<script type="text/javascript">
+								$(function () {
+									$("#ngaydi").datepicker({ 
+										dateFormat: 'dd-mm-yy'
+									});
+								});
+					</script>					  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_equipment'>Số phòng:</label>
+            <div class='col-md-6'>
+              <!-- <div class='col-md-3'> -->
+                <!-- <div class='form-group internal'> -->
+                  <!-- <select class='form-control' id='id_equipment'> -->
+                    <!-- <option>Travel trailer</option> -->
+                    <!-- <option>Fifth wheel</option> -->
+                    <!-- <option>RV/Motorhome</option> -->
+                    <!-- <option>Tent trailer</option> -->
+                    <!-- <option>Pickup camper</option> -->
+                    <!-- <option>Camper van</option> -->
+                  <!-- </select> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+				<div class='col-md-6'>
+				  <input class='form-control' id='sophong' name='sophong' placeholder='Số phòng' type='text'>
+				</div>
+			  </div>				
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_service'>Giá phòng:</label>
+            <div class='col-md-6'>
+              <!-- <select class='multiselect' id='id_service' multiple='multiple'> -->
+                <!-- <option value='hydro'>Hydro</option> -->
+                <!-- <option value='water'>Water</option> -->
+                <!-- <option value='sewer'>Sewer</option> -->
+              <!-- </select> -->
+            <!-- </div> -->
+				<div class='col-md-6'>
+				  <input class='form-control' id='giaphong' name='giaphong' placeholder='Giá phòng' type='text'>
+				</div>
+			  </div>			
+          </div>
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='ghichu'>Ghi chú:</label>
+            <div class='col-md-6'>
+              <textarea class='form-control' id='ghichu' name='ghichu' placeholder='Lưu ý của khách' rows='3'></textarea>
+            </div>
+          </div>
+          <div class='form-group'>
+            <div class='col-md-offset-4 col-md-3'>
+              <button class='btn-lg btn-primary' type='submit'>Đặt Phòng</button>
+			  <!-- <button type="submit">Submit</button> -->
+            </div>
+            <!-- <div class='col-md-3'> -->
+              <!-- <button class='btn-lg btn-danger' style='float:right' type='submit'>Cancel</button> -->
+            <!-- </div> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class='container'>
+    <div class='panel panel-primary dialog-panel'>
+      <div class='panel-heading'>
+		<form class='form-horizontal' role='form' onsubmit="deleteData(event)">
+          <div class='form-group'>
+            <label class='control-label col-md-2 col-md-offset-2' for='id_equipment'>Xoá thông tin đặt phòng:</label>
+            <div class='col-md-6'>
+              <!-- <div class='col-md-3'> -->
+                <!-- <div class='form-group internal'> -->
+                  <!-- <select class='form-control' id='id_equipment'> -->
+                    <!-- <option>Travel trailer</option> -->
+                    <!-- <option>Fifth wheel</option> -->
+                    <!-- <option>RV/Motorhome</option> -->
+                    <!-- <option>Tent trailer</option> -->
+                    <!-- <option>Pickup camper</option> -->
+                    <!-- <option>Camper van</option> -->
+                  <!-- </select> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+				<div class='col-md-7'>
+				  <input class='form-control' id='sdtcheckout' name='sdtcheckout' placeholder='Nhập số điện thoại của khách' type='text'>
+				</div>
+				<div class='col-md-offset-2 col-md-2'>
+					<button class='btn-lg btn-danger' style='float:right' type='submit'>Checkout</button>
+				</div>	
+        </form>	  
+      </div>
+    </div>
+  </div>  
+</body>
+<!-- Checkin -->
+	<script>
+	$(function() {
+	  $("#datepicker-checkin").datepicker();
+	  $("#datepicker-checkout").datepicker();
+	});
+	</script>
+	<script>
+		function addData(event) {
+			event.preventDefault();
+
+			// Get form data
+			const ten = document.getElementById('ten').value;
+			const sdt = document.getElementById('sdt').value;
+			const loai = document.getElementById('loai').value;
+			const diachi = document.getElementById('diachi').value;
+			const cccd = document.getElementById('cccd').value;
+			const ghichu = document.getElementById('ghichu').value;
+			const khuphong = document.getElementById('khuphong').value;
+			const sophong = document.getElementById('sophong').value;
+			const giaphong = document.getElementById('giaphong').value;
+			const ngayden = document.getElementById('ngayden').value;
+			const ngaydi = document.getElementById('ngaydi').value;
+
+			// Create JSON object
+			const data = {
+				"ten": ten,
+				"sdt": sdt,
+				"loai": loai,
+				"diachi": diachi,
+				"cccd": cccd,
+				"ghichu": ghichu,
+				"khuphong": khuphong,
+				"sophong": sophong,
+				"giaphong": giaphong,
+				"ngayden": ngayden,
+				"ngaydi": ngaydi
+			};
+
+			// Make POST request
+			fetch('http://127.0.0.1:5050/checkin', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(data)
+			})
+			<!-- .then(response => { -->
+				<!-- if (!response.ok) { -->
+					<!-- throw new Error('Network response was not ok'); -->
+				<!-- } -->
+				<!-- return response.json(); -->
+			<!-- }) -->
+			<!-- .then(data => { -->
+				<!-- console.log(data); -->
+			<!-- }) -->
+			.then(response => {
+				if (response.status === 200) {
+				// display success message using SweetAlert
+				swal("Success!", "Đăng ký thông tin của khách thành công.", "success");
+				form.reset(); // reset the form
+				} else {
+				// display error message using SweetAlert
+				swal("Error!", "Đã có lỗi xảy ra, vui lòng kiểm tra lại.", "error");
+				}			
+				<!-- if (!response.ok) { -->
+					<!-- throw new Error('Network response was not ok'); -->
+				<!-- } -->
+				<!-- return response.json(); -->
+			})
+			.then(data => {
+				console.log(data);
+			})		
+			.catch(error => {
+				console.error('There was a problem with the fetch operation:', error);
+			});
+		}
+	</script>
+<!-- Checkout -->
+	<script>
+		function deleteData(event) {
+			event.preventDefault();
+
+			// Get form data
+			<!-- const ten = document.getElementById('ten').value; -->
+			const sdtcheckout = document.getElementById('sdtcheckout').value;
+			<!-- const loai = document.getElementById('loai').value; -->
+			<!-- const diachi = document.getElementById('diachi').value; -->
+			<!-- const cccd = document.getElementById('cccd').value; -->
+			<!-- const ghichu = document.getElementById('ghichu').value; -->
+			<!-- const khuphong = document.getElementById('khuphong').value; -->
+			<!-- const sophongcheckout = document.getElementById('sophongcheckout').value; -->
+			<!-- const giaphong = document.getElementById('giaphong').value; -->
+			<!-- const ngayden = document.getElementById('ngayden').value; -->
+			<!-- const ngaydi = document.getElementById('ngaydi').value; -->
+
+			// Create JSON object
+			const data = {
+				<!-- "ten": ten, -->
+				"sdtcheckout": sdtcheckout,
+				<!-- "loai": loai, -->
+				<!-- "diachi": diachi, -->
+				<!-- "cccd": cccd, -->
+				<!-- "ghichu": ghichu, -->
+				<!-- "khuphong": khuphong, -->
+				<!-- "sophongcheckout": sophongcheckout -->
+				<!-- "giaphong": giaphong, -->
+				<!-- "ngayden": ngayden, -->
+				<!-- "ngaydi": ngaydi -->
+			};
+
+			// Make POST request
+			fetch('http://127.0.0.1:5050/checkout', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(data)
+			})
+			.then(response => {
+				if (response.status === 200) {
+				// display success message using SweetAlert
+				swal("Success!", "Xoá thông tin của khách thành công.", "success");
+				form.reset(); // reset the form
+				} else {
+				// display error message using SweetAlert
+				swal("Error!", "Không tìm thấy sđt của khách, vui lòng kiểm tra lại.", "error");
+				}					
+				<!-- if (!response.ok) { -->
+					<!-- throw new Error('Network response was not ok'); -->
+				<!-- } -->
+				<!-- return response.json(); -->
+			})
+			.then(data => {
+				console.log(data);
+			})
+			.catch(error => {
+				console.error('There was a problem with the fetch operation:', error);
+			});
+		}
+	</script>	
+</html>
